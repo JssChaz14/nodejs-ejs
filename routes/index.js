@@ -4,7 +4,7 @@ const router = express.Router();
 const connection = require('../config/db');
 
 router.get('/', function(req, res, next) {
-    connection.query('SELECT * FROM user', (err, result) => {
+    connection.query('SELECT * FROM users', (err, result) => {
         if (err) {
             console.log(err)
         } else {
@@ -15,7 +15,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/contacto', function(req, res, next) {
-    res.send('Contacto')
+    res.render('./../views/user/users')
+    ñ
+});
+
+router.get('/hi', function(req, res, next) {
+    res.render('../views/user/add')
 
 });
 
